@@ -44,21 +44,25 @@ const roadmapSteps = [
     label: "Method 1",
     title: "Human-Centered Design",
     text: "Every AI interaction is designed for real users, with a focus on how intelligence feels, not just what it does.",
+    pictogram: "pictogram-design-thinking-team.svg",
   },
   {
     label: "Method 2",
     title: "AI-First Architecture",
     text: "FuseLab integrates intelligence before the first wireframe so the product structure itself is designed around AI capability.",
+    pictogram: "pictogram-ai.svg",
   },
   {
     label: "Method 3",
     title: "Measurable Impact",
     text: "Design decisions are tied to adoption, efficiency, and business outcomes because good design should move the needle.",
+    pictogram: "pictogram-chart-evaluation.svg",
   },
   {
     label: "Method 4",
     title: "Measure the Result",
     text: "Success metrics are defined upfront, from time saved to decision quality to customer adoption and business value.",
+    pictogram: "pictogram-insights.svg",
   },
 ];
 
@@ -95,130 +99,47 @@ const templatePages = [
   },
 ];
 
-const impactMetrics = [
-  { label: "Avison Young", value: "73%", note: "BD time reclaimed so brokers spend more time closing deals." },
-  { label: "FuseDash RTI", value: "3×", note: "Faster workflows through AI-assisted interface guidance and layout support." },
-  { label: "Drill Sense", value: "5×", note: "Faster analysis through natural language querying and automated insights." },
-];
-
 const projectProfiles = {
   avison: {
-    overviewTitle: "Full Project Details",
     overviewText:
       "FuseLab designed an AI-powered business development experience for commercial real estate brokers, combining lead intelligence, prospect research, and relationship guidance into a single product workflow.",
-    cards: [
-      {
-        label: "Project Goal",
-        value:
-          "Reduce manual BD work and help brokers prioritize the right relationships at the right time.",
-      },
-      {
-        label: "Services",
-        value:
-          "Product strategy, UX design, AI workflow design, dashboard design, and CRM interaction design.",
-      },
-      {
-        label: "Sector",
-        value: "Commercial Real Estate",
-      },
-      {
-        label: "Year",
-        value: "2025",
-      },
-      {
-        label: "Timeline",
-        value: "3 product phases",
-      },
+    features: [
+      "AI lead prioritization and broker scoring",
+      "In-context prospect research summaries",
+      "Relationship guidance built into daily workflow",
     ],
   },
   fusedash: {
-    overviewTitle: "Full Project Details",
     overviewText:
       "FuseDash RTI is a real-time interface concept where AI actively reduces layout burden, supports decision-making inside the workflow, and improves how teams interact with dense operational data.",
-    cards: [
-      {
-        label: "Project Goal",
-        value:
-          "Create an intelligent interface that helps users move through complex collaborative workflows with less friction.",
-      },
-      {
-        label: "Services",
-        value:
-          "Interface design, workflow mapping, component systems, AI co-pilot patterns, and interaction design.",
-      },
-      {
-        label: "Sector",
-        value: "Real-Time Interface",
-      },
-      {
-        label: "Year",
-        value: "2025",
-      },
-      {
-        label: "Timeline",
-        value: "Concept to prototype",
-      },
+    features: [
+      "AI-assisted layout and arrangement suggestions",
+      "Context-aware co-pilot prompts during sessions",
+      "Workflow guidance inside dense data views",
     ],
   },
   drillSense: {
-    overviewTitle: "Full Project Details",
     overviewText:
       "Drill Sense turns complex operational telemetry into an actionable intelligence experience, using AI to surface patterns, support exploration, and accelerate decision-making for technical users.",
-    cards: [
-      {
-        label: "Project Goal",
-        value:
-          "Help teams move from overwhelming data volume to clear recommendations, insight surfacing, and proactive action.",
-      },
-      {
-        label: "Services",
-        value:
-          "Data experience design, information architecture, insight workflows, dashboard UX, and AI-assisted reporting.",
-      },
-      {
-        label: "Sector",
-        value: "Operational Intelligence",
-      },
-      {
-        label: "Year",
-        value: "2025",
-      },
-      {
-        label: "Timeline",
-        value: "Multi-release platform evolution",
-      },
+    features: [
+      "Automated anomaly and pattern surfacing",
+      "Operational insight summaries from live telemetry",
+      "Faster decision support for technical teams",
     ],
   },
 };
-
-const nextSteps = [
-  {
-    title: "Ready to embed AI into your next product?",
-    text: "FuseLab Creative combines design thinking and intelligent systems to shape AI into something users can actually feel and trust.",
-  },
-  {
-    title: "Design the intelligence, not just the interface",
-    text: "FuseLab treats AI as part of the product experience itself, from architecture and workflows to decision-making and interaction design.",
-  },
-  {
-    title: "fuselabcreative.com",
-    text: "Use this closing panel for your CTA, contact path, and one-line statement of how AI will change the next product experience.",
-  },
-];
 
 const challengeGrid = document.getElementById("challengeGrid");
 const opportunityGrid = document.getElementById("opportunityGrid");
 const roadmapContainer = document.getElementById("roadmapSteps");
 const templatePagesContainer = document.getElementById("templatePages");
-const impactMetricsContainer = document.getElementById("impactMetrics");
-const nextStepsContainer = document.getElementById("nextSteps");
 const tocList = document.getElementById("tocList");
-const avisonOverview = document.getElementById("avisonOverview");
 const avisonProfileGrid = document.getElementById("avisonProfileGrid");
-const fusedashOverview = document.getElementById("fusedashOverview");
+const avisonFeatures = document.getElementById("avisonFeatures");
 const fusedashProfileGrid = document.getElementById("fusedashProfileGrid");
-const drillSenseOverview = document.getElementById("drillSenseOverview");
+const fusedashFeatures = document.getElementById("fusedashFeatures");
 const drillSenseProfileGrid = document.getElementById("drillSenseProfileGrid");
+const drillSenseFeatures = document.getElementById("drillSenseFeatures");
 
 const deck = document.getElementById("deck");
 const slides = [...document.querySelectorAll(".slide")];
@@ -230,23 +151,31 @@ const progressFill = document.getElementById("progressFill");
 const prevSlideButton = document.getElementById("prevSlide");
 const nextSlideButton = document.getElementById("nextSlide");
 
-function renderProjectProfile(profile, overviewContainer, gridContainer) {
-  overviewContainer.innerHTML = `
-    <span>Overview</span>
-    <h4>${profile.overviewTitle}</h4>
-    <p>${profile.overviewText}</p>
+function renderProjectProfile(profile, gridContainer) {
+  gridContainer.innerHTML = `
+    <article class="project-profile-card project-profile-card--feature">
+      <span>Approach</span>
+      <p>${profile.overviewText}</p>
+    </article>
   `;
+}
 
-  gridContainer.innerHTML = profile.cards
-    .map(
-      (card) => `
-        <article class="project-profile-card">
-          <span>${card.label}</span>
-          <h4>${card.value}</h4>
-        </article>
-      `
-    )
-    .join("");
+function renderProjectFeatures(profile, container) {
+  container.innerHTML = `
+    <span>Key AI Interface Features</span>
+    <ul class="project-feature-list">
+      ${profile.features
+        .map(
+          (feature, index) => `
+            <li>
+              <strong>${String(index + 1).padStart(2, "0")}</strong>
+              <p>${feature}</p>
+            </li>
+          `
+        )
+        .join("")}
+    </ul>
+  `;
 }
 
 function renderCards() {
@@ -278,6 +207,12 @@ function renderCards() {
     .map(
       (item) => `
         <article class="timeline-item">
+          <img
+            class="timeline-pictogram"
+            src="${item.pictogram}"
+            alt=""
+            aria-hidden="true"
+          />
           <span>${item.label}</span>
           <h4>${item.title}</h4>
           <p>${item.text}</p>
@@ -303,32 +238,12 @@ function renderCards() {
     )
     .join("");
 
-  impactMetricsContainer.innerHTML = impactMetrics
-    .map(
-      (metric) => `
-        <article class="impact-metric">
-          <span>${metric.label}</span>
-          <strong>${metric.value}</strong>
-          <p>${metric.note}</p>
-        </article>
-      `
-    )
-    .join("");
-
-  nextStepsContainer.innerHTML = nextSteps
-    .map(
-      (step) => `
-        <article class="next-step-item">
-          <strong>${step.title}</strong>
-          <p>${step.text}</p>
-        </article>
-      `
-    )
-    .join("");
-
-  renderProjectProfile(projectProfiles.avison, avisonOverview, avisonProfileGrid);
-  renderProjectProfile(projectProfiles.fusedash, fusedashOverview, fusedashProfileGrid);
-  renderProjectProfile(projectProfiles.drillSense, drillSenseOverview, drillSenseProfileGrid);
+  renderProjectProfile(projectProfiles.avison, avisonProfileGrid);
+  renderProjectProfile(projectProfiles.fusedash, fusedashProfileGrid);
+  renderProjectProfile(projectProfiles.drillSense, drillSenseProfileGrid);
+  renderProjectFeatures(projectProfiles.avison, avisonFeatures);
+  renderProjectFeatures(projectProfiles.fusedash, fusedashFeatures);
+  renderProjectFeatures(projectProfiles.drillSense, drillSenseFeatures);
 
   tocList.innerHTML = slides
     .map((slide, index) => {

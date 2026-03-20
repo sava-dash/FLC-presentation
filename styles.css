@@ -110,9 +110,7 @@ body::before {
 .opportunity-card p,
 .timeline-item p,
 .template-card p,
-.next-step-item p,
-.spotlight-card small,
-.impact-metric p {
+.spotlight-card small {
   color: var(--text-dark-soft);
   line-height: 1.7;
 }
@@ -493,8 +491,7 @@ body::before {
   min-height: 0;
 }
 
-.spotlight-card span,
-.next-step-card span {
+.spotlight-card span {
   color: var(--label);
 }
 
@@ -580,7 +577,6 @@ body::before {
 .opportunity-card,
 .timeline-item,
 .template-card,
-.impact-metric,
 .spotlight-card,
 .next-step-card {
   position: relative;
@@ -591,8 +587,7 @@ body::before {
 .challenge-card,
 .opportunity-card,
 .timeline-item,
-.template-card,
-.impact-metric {
+.template-card {
   padding: 1.6rem;
   border: 1px solid var(--paper-line);
   background: rgba(255, 255, 255, 0.92);
@@ -656,62 +651,73 @@ body::before {
   gap: 1.25rem;
 }
 
-.kpi-layout {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 340px minmax(0, 1fr);
-  gap: 1.25rem;
-  align-items: start;
-  flex: 1;
-  min-height: 0;
-}
-
-.impact-metrics,
 .timeline-list,
-.page-template-grid,
-.next-step-list {
+.page-template-grid {
   display: grid;
   gap: 1.2rem;
 }
 
-.impact-metric span {
-  color: var(--label);
-}
-
-.impact-metric strong {
-  display: block;
-  margin: 0.45rem 0;
-  font-family: "Red Hat Display", sans-serif;
-  color: var(--text-dark);
-  font-size: 2.6rem;
-  letter-spacing: -0.05em;
-}
-
-.overview-layout {
+.timeline-list--compact {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 1.25rem;
-  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
   flex: 1;
   min-height: 0;
+}
+
+.timeline-list--compact .timeline-item {
+  padding: 1.2rem 1.25rem;
+}
+
+.timeline-pictogram {
+  display: block;
+  width: 4.4rem;
+  height: 4.4rem;
+  margin-bottom: 0.65rem;
+  object-fit: contain;
+  opacity: 0.96;
+}
+
+.timeline-list--compact .timeline-item h4 {
+  margin: 0.55rem 0 0.35rem;
+  font-size: 1.2rem;
+  line-height: 1.18;
+}
+
+.timeline-list--compact .timeline-item p {
+  font-size: 0.95rem;
+  line-height: 1.55;
 }
 
 .project-profile-layout {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1.38fr) minmax(320px, 0.9fr);
+  gap: 1.45rem;
   align-items: stretch;
   flex: 1;
   min-height: 0;
 }
 
+.project-profile-top {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  gap: 1.6rem;
+  align-items: start;
+  margin-bottom: 1.45rem;
+}
+
+.project-profile-top h3 {
+  font-size: clamp(2.15rem, 4vw, 4.2rem);
+  line-height: 0.96;
+}
+
 .project-profile-media,
-.project-overview-card,
+.project-feature-card,
 .project-profile-card {
   border-radius: var(--radius-lg);
   border: 1px solid var(--paper-line);
@@ -743,6 +749,58 @@ body::before {
   inset: 0;
   background: linear-gradient(180deg, rgba(9, 21, 41, 0.03), rgba(9, 21, 41, 0.12));
   pointer-events: none;
+}
+
+.project-feature-card {
+  padding: 1.25rem 1.2rem;
+}
+
+.project-feature-card > span {
+  display: block;
+  color: var(--label);
+  margin-bottom: 0.95rem;
+}
+
+.project-feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.project-feature-list li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: start;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--paper-line);
+}
+
+.project-feature-list li:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.project-feature-list strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  border-radius: 999px;
+  background: rgba(118, 109, 255, 0.1);
+  color: var(--royal);
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+}
+
+.project-feature-list p {
+  margin: 0;
+  color: var(--text-dark-soft);
+  line-height: 1.55;
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 0.94rem;
 }
 
 .project-profile-media--avison {
@@ -780,52 +838,56 @@ body::before {
 
 .project-profile-content {
   display: grid;
-  grid-template-rows: auto 1fr;
-  gap: 1rem;
+  grid-template-rows: auto auto;
+  gap: 1.35rem;
   min-height: 0;
 }
 
-.project-overview-card {
-  padding: 1.25rem 1.35rem;
-}
-
-.project-overview-card span,
+.project-feature-card > span,
 .project-profile-card span {
   color: var(--label);
+  display: block;
 }
 
-.project-overview-card h4,
 .project-profile-card h4 {
-  margin: 0.55rem 0 0;
+  margin: 0.7rem 0 0;
   color: var(--text-dark);
   font-family: "Red Hat Display", sans-serif;
 }
 
-.project-overview-card h4 {
-  font-size: 1.55rem;
-}
-
-.project-overview-card p {
-  margin: 0.7rem 0 0;
-  color: var(--text-dark-soft);
-  line-height: 1.6;
-  font-family: "Red Hat Text", sans-serif;
-}
-
 .project-profile-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 1.35rem;
   align-content: start;
 }
 
 .project-profile-card {
-  padding: 1.1rem 1.15rem;
+  padding: 1.6rem 1.7rem;
+  min-height: 100%;
 }
 
 .project-profile-card h4 {
-  font-size: 1.12rem;
-  line-height: 1.45;
+  font-size: clamp(1.55rem, 2.35vw, 2.35rem);
+  line-height: 1.05;
+}
+
+.project-profile-card p {
+  margin: 1rem 0 0;
+  color: var(--text-dark-soft);
+  line-height: 1.65;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+.project-profile-summary {
+  margin: 0;
+  color: var(--text-dark-soft);
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.7;
+}
+
+.slide--project-profile .slide-footer {
+  margin-top: 1rem;
 }
 
 .page-template-grid {
@@ -843,30 +905,6 @@ body::before {
   color: var(--text-dark-soft);
   line-height: 1.8;
   font-family: "Red Hat Text", sans-serif;
-}
-
-.next-step-card {
-  padding: 1.55rem;
-  border: 1px solid var(--paper-line);
-  background: rgba(244, 247, 251, 0.92);
-}
-
-.next-step-item {
-  padding: 1rem 0;
-  border-top: 1px solid var(--paper-line);
-}
-
-.next-step-item:first-child {
-  padding-top: 0;
-  border-top: 0;
-}
-
-.next-step-item strong {
-  display: block;
-  margin-bottom: 0.4rem;
-  font-family: "Red Hat Display", sans-serif;
-  color: var(--text-dark);
-  font-size: 1.18rem;
 }
 
 @media (max-width: 1150px) {
@@ -895,15 +933,15 @@ body::before {
   .hero-layout,
   .toc-layout,
   .light-header,
+  .project-profile-top,
   .opportunity-layout,
-  .kpi-layout,
-  .overview-layout,
   .project-profile-layout {
     grid-template-columns: 1fr;
   }
 
   .page-template-grid,
   .opportunity-grid,
+  .timeline-list--compact,
   .project-profile-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -927,6 +965,7 @@ body::before {
   .control-row,
   .challenge-grid,
   .opportunity-grid,
+  .timeline-list--compact,
   .page-template-grid,
   .project-profile-grid {
     grid-template-columns: 1fr;
@@ -934,6 +973,7 @@ body::before {
 
   .challenge-grid,
   .opportunity-grid,
+  .timeline-list--compact,
   .page-template-grid,
   .project-profile-grid {
     display: grid;
