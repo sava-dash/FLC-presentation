@@ -99,6 +99,17 @@ const templatePages = [
   },
 ];
 
+const tocEntries = [
+  { number: "03", title: "Who We Are" },
+  { number: "04", title: "The Opportunity" },
+  { number: "05", title: "FuseLab's AI Integration Approach" },
+  { number: "06", title: "Product Impact" },
+  { number: "07", title: "Avison Young" },
+  { number: "08", title: "FuseDash Real Time Interface" },
+  { number: "09", title: "Drill Sense" },
+  { number: "10", title: "Portfolio Summary" },
+];
+
 const projectProfiles = {
   avison: {
     overviewText:
@@ -245,16 +256,12 @@ function renderCards() {
   renderProjectFeatures(projectProfiles.fusedash, fusedashFeatures);
   renderProjectFeatures(projectProfiles.drillSense, drillSenseFeatures);
 
-  tocList.innerHTML = slides
+  tocList.innerHTML = tocEntries
     .map((slide, index) => {
-      if (slide.id === "cover") {
-        return "";
-      }
-
       return `
         <li>
-          <span>${String(index + 1).padStart(2, "0")}</span>
-          <strong>${slide.dataset.title}</strong>
+          <span>${slide.number}</span>
+          <strong>${slide.title}</strong>
         </li>
       `;
     })
