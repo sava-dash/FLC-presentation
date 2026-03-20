@@ -295,13 +295,19 @@ body::before {
 .slides {
   display: grid;
   gap: 1.75rem;
+  justify-items: center;
 }
 
 .slide {
   position: relative;
-  min-height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  width: min(100%, calc((100vh - 5.5rem) * 16 / 9));
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
   scroll-snap-align: start;
-  padding: clamp(2rem, 3.6vw, 3rem);
+  padding: clamp(1.8rem, 3vw, 2.6rem);
   border-radius: var(--radius-xl);
   overflow: hidden;
 }
@@ -449,6 +455,7 @@ body::before {
   gap: 2.75rem;
   align-items: center;
   flex: 1;
+  min-height: 0;
 }
 
 .hero-copy,
@@ -460,6 +467,11 @@ body::before {
   margin-top: 0.55rem;
   font-size: clamp(2.4rem, 5vw, 4.9rem);
   line-height: 0.94;
+}
+
+.slide--light h3 {
+  font-size: clamp(1.7rem, 3.2vw, 3.2rem);
+  line-height: 0.98;
 }
 
 .hero-tags {
@@ -478,7 +490,7 @@ body::before {
 
 .hero-visual {
   position: relative;
-  min-height: 28rem;
+  min-height: 0;
 }
 
 .spotlight-card span,
@@ -494,6 +506,7 @@ body::before {
   gap: 2.75rem;
   align-items: start;
   flex: 1;
+  min-height: 0;
   padding-top: 4.75rem;
 }
 
@@ -558,6 +571,9 @@ body::before {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
+  flex: 1;
+  min-height: 0;
+  align-content: start;
 }
 
 .challenge-card,
@@ -616,6 +632,8 @@ body::before {
   grid-template-columns: 310px minmax(0, 1fr);
   gap: 1.25rem;
   align-items: start;
+  flex: 1;
+  min-height: 0;
 }
 
 .spotlight-card {
@@ -645,6 +663,8 @@ body::before {
   grid-template-columns: 340px minmax(0, 1fr);
   gap: 1.25rem;
   align-items: start;
+  flex: 1;
+  min-height: 0;
 }
 
 .impact-metrics,
@@ -675,15 +695,19 @@ body::before {
   grid-template-columns: minmax(0, 1fr) 320px;
   gap: 1.25rem;
   align-items: start;
+  flex: 1;
+  min-height: 0;
 }
 
 .project-profile-layout {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(420px, 1.06fr) minmax(0, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+  gap: 1rem;
   align-items: stretch;
+  flex: 1;
+  min-height: 0;
 }
 
 .project-profile-media,
@@ -697,7 +721,8 @@ body::before {
 
 .project-profile-media {
   position: relative;
-  min-height: 42rem;
+  min-height: 0;
+  height: 100%;
   overflow: hidden;
   background:
     radial-gradient(circle at top right, rgba(118, 109, 255, 0.12), transparent 20%),
@@ -755,11 +780,13 @@ body::before {
 
 .project-profile-content {
   display: grid;
+  grid-template-rows: auto 1fr;
   gap: 1rem;
+  min-height: 0;
 }
 
 .project-overview-card {
-  padding: 1.45rem 1.55rem;
+  padding: 1.25rem 1.35rem;
 }
 
 .project-overview-card span,
@@ -781,18 +808,19 @@ body::before {
 .project-overview-card p {
   margin: 0.7rem 0 0;
   color: var(--text-dark-soft);
-  line-height: 1.7;
+  line-height: 1.6;
   font-family: "Red Hat Text", sans-serif;
 }
 
 .project-profile-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+  align-content: start;
 }
 
 .project-profile-card {
-  padding: 1.4rem 1.5rem;
+  padding: 1.1rem 1.15rem;
 }
 
 .project-profile-card h4 {
@@ -807,75 +835,6 @@ body::before {
 .template-card {
   display: grid;
   gap: 1rem;
-}
-
-.browser-mockup {
-  padding: 1rem;
-  border-radius: 20px;
-  border: 1px solid var(--paper-line);
-  background: var(--paper-soft);
-}
-
-.browser-top {
-  display: flex;
-  gap: 0.35rem;
-  margin-bottom: 1rem;
-}
-
-.browser-top i {
-  width: 0.58rem;
-  height: 0.58rem;
-  border-radius: 999px;
-  background: rgba(9, 21, 41, 0.18);
-}
-
-.browser-body {
-  display: grid;
-  gap: 0.7rem;
-}
-
-.browser-bar,
-.browser-strip,
-.browser-chart span {
-  border-radius: 999px;
-  background: rgba(9, 21, 41, 0.08);
-}
-
-.browser-bar {
-  width: 72%;
-  height: 0.78rem;
-}
-
-.browser-strip {
-  height: 3.8rem;
-}
-
-.browser-chart {
-  display: flex;
-  align-items: end;
-  gap: 0.45rem;
-  height: 4.5rem;
-}
-
-.browser-chart span {
-  width: 100%;
-}
-
-.browser-chart span:nth-child(1) {
-  height: 48%;
-}
-
-.browser-chart span:nth-child(2) {
-  height: 80%;
-}
-
-.browser-chart span:nth-child(3) {
-  height: 58%;
-}
-
-.browser-chart span:nth-child(4) {
-  height: 92%;
-  background: linear-gradient(180deg, var(--royal), rgba(77, 95, 255, 0.18));
 }
 
 .browser-points {
@@ -929,6 +888,10 @@ body::before {
     scroll-snap-type: none;
   }
 
+  .slide {
+    width: 100%;
+  }
+
   .hero-layout,
   .toc-layout,
   .light-header,
@@ -950,6 +913,11 @@ body::before {
   .deck {
     padding: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .slide {
+    aspect-ratio: auto;
+    min-height: calc(100vh - 2rem);
   }
 
   .deck-topbar {

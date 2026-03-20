@@ -295,16 +295,6 @@ function renderCards() {
             <h4>${page.title}</h4>
             <p>${page.text}</p>
           </div>
-          <div class="browser-mockup" aria-hidden="true">
-            <div class="browser-top"><i></i><i></i><i></i></div>
-            <div class="browser-body">
-              <div class="browser-bar"></div>
-              <div class="browser-strip"></div>
-              <div class="browser-chart">
-                <span></span><span></span><span></span><span></span>
-              </div>
-            </div>
-          </div>
           <ul class="browser-points">
             ${page.bullets.map((bullet) => `<li>${bullet}</li>`).join("")}
           </ul>
