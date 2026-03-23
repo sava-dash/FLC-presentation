@@ -126,22 +126,22 @@ const takeawayCards = [
   },
   {
     tag: "Takeaway 02",
-    title: "Each pattern solves a different problem",
+    title: "Each UI approach solves a different problem",
     text: "Canvas supports creation, simulation supports decisions, CLI supports control, adaptive widgets support flexibility, and digital twins support reflection.",
   },
   {
     tag: "Takeaway 03",
     title: "The right choice depends on context",
-    text: "User type, data freshness, interface output, and implementation complexity should drive the pattern selection.",
+    text: "User type, data freshness, interface output, and implementation complexity should drive the UI approach selection.",
   },
   {
     tag: "Takeaway 04",
     title: "Hybrid systems are powerful",
-    text: "Combining patterns often creates the strongest user experience, especially in complex operational or data-heavy products.",
+    text: "Combining UI approaches often creates the strongest user experience, especially in complex operational or data-heavy products.",
   },
   {
     tag: "Takeaway 05",
-    title: "All five patterns are viable today",
+    title: "All five UI approaches are viable today",
     text: "Current tooling already supports production-ready implementations across streaming, ranking, terminal, dynamic UI, and twin architectures.",
   },
 ];
