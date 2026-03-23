@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Interface Integration Methods for Web Applications</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Public+Sans:wght@600&family=Red+Hat+Display:wght@500;700&family=Red+Hat+Text:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="presentation-shell">
+      <aside class="rail">
+        <div class="rail__brand">
+          <img class="rail-logo" src="flc-logo.svg" alt="FLC logo" />
+          <h1>AI Interface Integration Methods</h1>
+          <p class="rail__lede">
+            Five patterns for embedding intelligence into modern web
+            applications, from real-time canvases to digital twins.
+          </p>
+        </div>
+
+        <nav class="rail-nav" aria-label="Presentation sections">
+          <a href="#cover" class="is-active">01 Cover</a>
+          <a href="#overview">02 Overview</a>
+          <a href="#pattern-canvas">03 Real-Time Interface</a>
+          <a href="#pattern-simulation">04 Simulation & Recommendation</a>
+          <a href="#pattern-cli">05 CLI</a>
+          <a href="#pattern-generative">06 Generative UI</a>
+          <a href="#pattern-twin">07 Digital Twin</a>
+          <a href="#comparison">08 Comparison Matrix</a>
+          <a href="#choosing">09 Choosing the Right Pattern</a>
+          <a href="#conclusion">10 Conclusion</a>
+        </nav>
+      </aside>
+
+      <main class="deck" id="deck">
+        <div class="slides">
+          <section
+            class="slide slide--dark slide--hero"
+            id="cover"
+            data-title="AI Interface Integration Methods for Web Applications"
+            data-hint="Open with the five AI-native interface patterns"
+          >
+            <video
+              class="hero-slide-video"
+              src="hero-background-source.mov"
+              autoplay
+              muted
+              loop
+              playsinline
+              aria-hidden="true"
+            ></video>
+            <div class="hero-slide-overlay" aria-hidden="true"></div>
+            <div class="hero-slide-tint" aria-hidden="true"></div>
+
+            <div class="slide-chrome">
+              <span class="slide-number">01</span>
+              <span class="slide-label">AI Interface Integration Methods</span>
+            </div>
+
+            <div class="hero-layout hero-layout--single">
+              <div class="hero-copy">
+                <p class="eyebrow">Presentation overview</p>
+                <h3>AI Interface Integration Methods for Web Applications.</h3>
+                <p class="slide-intro">
+                  5 approaches to embedding intelligence into modern UIs,
+                  spanning live co-creation, simulation and ranking, terminal
+                  control, adaptive widgets, and AI-synchronized digital twins.
+                </p>
+
+                <div class="hero-tags">
+                  <span>Real-Time</span>
+                  <span>Simulation & Recommendation</span>
+                  <span>CLI</span>
+                  <span>Generative</span>
+                  <span>Digital Twin</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide-footer">
+              <span>AI-native interface systems</span>
+              <span>Modern web application patterns</span>
+            </div>
+          </section>
+
+          <section
+            class="slide slide--dark slide--toc"
+            id="overview"
+            data-title="Overview"
+            data-hint="Introduce the AI integration landscape and the five patterns"
+          >
+            <div class="slide-chrome">
+              <span class="slide-number">02</span>
+              <span class="slide-label">Overview</span>
+            </div>
+
+            <div class="toc-layout">
+              <div>
+                <p class="eyebrow">The AI integration landscape</p>
+                <h3>Five patterns define how intelligence shows up in the interface.</h3>
+              </div>
+              <div>
+                <p class="slide-intro">
+                  Modern web applications are no longer passive tools. They
+                  reason, adapt, and respond. These patterns cover different
+                  user needs, data contexts, and interface behaviors, from live
+                  canvases to AI-synchronized replicas of real-world systems.
+                </p>
+                <ol class="toc-list" id="tocList"></ol>
+              </div>
+            </div>
+
+            <div class="slide-footer">
+              <span>Five distinct AI integration patterns</span>
+              <span>From creation to decision-support and monitoring</span>
+            </div>
+          </section>
+
+          <section
+            class="slide slide--light slide--project-profile"
+            id="pattern-canvas"
+            data-title="Real-Time Interface (Canvas)"
+            data-hint="Pattern 1 for live, continuously updating AI surfaces"
+          >
+            <div class="project-profile-top project-profile-top--single">
+              <div>
+                <p class="page-kicker">Pattern 1</p>
+                <h3>Real-Time Interface (Canvas)</h3>
+              </div>
+            </div>
+
+            <div class="project-profile-layout">
+              <div class="project-profile-media">
+                <button class="media-fullscreen-button" type="button" data-video-fullscreen>
+                  Full screen
+                </button>
+                <video
+                  class="project-profile-video"
+                  src="pattern-canvas-video.mp4"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                ></video>
+              </div>
+
+              <div class="project-profile-content">
+                <div class="project-profile-grid" id="canvasCards"></div>
+              </div>
+            </div>
+
+            <div class="slide-footer slide-footer--light">
+              <span>03</span>
+              <span>Pattern 1: Real-Time Interface (Canvas)</span>
+            </div>
+          </section>
+
+          <section
+            class="slide slide--light slide--project-profile"
+            id="pattern-simulation"
+            data-title="Simulation & Recommendation"
+            data-hint="Pattern 2 for modeling outcomes and ranking actions"
+          >
+            <div class="project-profile-top project-profile-top--single">
+              <div>
+                <p class="page-kicker">Pattern 2</p>
+                <h3>Simulation & Recommendation</h3>
+              </div>
+            </div>
+
+            <div class="project-profile-layout">
+              <div class="project-profile-media">
+                <button class="media-fullscreen-button" type="button" data-video-fullscreen>
+                  Full screen
+                </button>
+                <video
+                  class="project-profile-video"
+                  src="pattern-simulation-video.mov"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                ></video>
+              </div>
+
+              <div class="project-profile-content">
+                <div class="project-profile-grid" id="simulationCards"></div>
+              </div>
+            </div>
+
+            <div class="slide-footer slide-footer--light">
+              <span>04</span>
+              <span>Pattern 2: Simulation & Recommendation</span>
+            </div>
+          </section>
+
+          <section
+            class="slide slide--light slide--project-profile"
+            id="pattern-cli"
+            data-title="CLI (Command-Line Interface)"
+            data-hint="Pattern 3 for text-first AI execution and control"
+          >
+            <div class="project-profile-top project-profile-top--single">
+              <div>
+                <p class="page-kicker">Pattern 3</p>
+                <h3>CLI (Command-Line Interface)</h3>
+              </div>
+            </div>
+
+            <div class="project-profile-layout">
+              <div class="project-profile-media">
+                <button class="media-fullscreen-button" type="button" data-video-fullscreen>
+                  Full screen
+                </button>
+                <video
+                  class="project-profile-video"
+                  src="pattern-cli-video-web.mov"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                ></video>
+              </div>
+
+              <div class="project-profile-content">
+                <div class="project-profile-grid" id="cliCards"></div>
+              </div>
+            </div>
+
+            <div class="slide-footer slide-footer--light">
+              <span>05</span>
+              <span>Pattern 3: CLI</span>
+            </div>
+          </section>
+
+          <section
+            class="slide slide--light slide--project-profile"
+            id="pattern-generative"
+            data-title="Generative UI (Adaptive Widgets)"
+            data-hint="Pattern 4 for interfaces that reconstruct themselves dynamically"
+          >
+            <div class="project-profile-top project-profile-top--single">
+              <div>
+                <p class="page-kicker">Pattern 4</p>
+                <h3>Generative UI (Adaptive Widgets)</h3>
+              </div>
+            </div>
+
+            <div class="project-profile-layout">
+              <div class="project-profile-media">
+                <button class="media-fullscreen-button" type="button" data-video-fullscreen>
+                  Full screen
+                </button>
+                <video
+                  class="project-profile-video"
+                  src="pattern-generative-video.mov"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                ></video>
+              </div>
+
+              <div class="project-profile-content">
+                <div class="project-profile-grid" id="generativeCards"></div>
+              </div>
+            </div>
+
+            <div class="slide-footer slide-footer--light">
+              <span>06</span>
+              <span>Pattern 4: Generative UI (Adaptive Widgets)</span>
+            </div>
+          </section>
+
+          <section
+            class="slide slide--light slide--project-profile"
+            id="pattern-twin"
+            data-title="Digital Twin"
+            data-hint="Pattern 5 for live virtual replicas of real-world systems"
+          >
+            <div class="project-profile-top project-profile-top--single">
+              <div>
+                <p class="page-kicker">Pattern 5</p>
+                <h3>Digital Twin</h3>
+              </div>
+            </div>
+
+            <div class="project-profile-layout">
+              <div class="project-profile-media">
+                <button class="media-fullscreen-button" type="button" data-video-fullscreen>
+                  Full screen
+                </button>
+                <video
+                  class="project-profile-video"
+                  src="pattern-twin-video-web.mov"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                ></video>
+              </div>
+
+              <div class="project-profile-content">
+                <div class="project-profile-grid" id="twinCards"></div>
+              </div>
+            </div>
+
+            <div class="slide-footer slide-footer--light">
+              <span>07</span>
+              <span>Pattern 5: Digital Twin</span>
+            </div>
+          </section>
+
+          <section
+            class="slide slide--light slide--comparison"
+            id="comparison"
+            data-title="Comparison Matrix"
+            data-hint="Compare the five patterns across users, data, and outputs"
+          >
+            <div class="light-header">
+              <div>
+                <p class="page-kicker">Comparison Matrix</p>
+                <h3>Each pattern solves a different interface problem.</h3>
+              </div>
+              <p class="section-note">
+                The right integration pattern depends on who the user is, how
+                fresh the data needs to be, what kind of output the interface
+                should generate, and how complex the system is to build.
+              </p>
+            </div>
+
+            <div class="comparison-stage">
+              <div class="comparison-wrap">
+                <table class="comparison-table" id="comparisonTable"></table>
+              </div>
+            </div>
+
+            <div class="slide-footer slide-footer--light">
+              <span>08</span>
+              <span>Pattern comparison across interaction and implementation</span>
+            </div>
+          </section>
+
+          <section
+            class="slide slide--light slide--choosing"
+            id="choosing"
+            data-title="Choosing the Right Pattern"
+            data-hint="Use a simple framework to choose the right AI interface pattern"
+          >
+            <div class="light-header">
+              <div>
+                <p class="page-kicker">Decision Framework</p>
+                <h3>Choosing the right pattern starts with the user and the output.</h3>
+              </div>
+              <p class="section-note">
+                These five prompts point teams toward the most suitable
+                pattern based on user needs, output format, and system context.
+              </p>
+            </div>
+
+            <div class="decision-layout">
+              <div class="challenge-grid decision-grid" id="decisionGrid"></div>
+            </div>
+
+            <div class="slide-footer slide-footer--light">
+              <span>09</span>
+              <span>Decision guide for choosing the right pattern</span>
+            </div>
+          </section>
+
+          <section
+            class="slide slide--light slide--overview slide--conclusion"
+            id="conclusion"
+            data-title="Conclusion"
+            data-hint="Close with the main takeaways and the interface shift"
+          >
+            <div class="light-header">
+              <div>
+                <p class="page-kicker">Conclusion</p>
+                <h3>AI is no longer just inside the interface. It is shaping the interface.</h3>
+              </div>
+              <p class="section-note">
+                Each pattern supports a different kind of intelligence, from
+                creation and decision-support to control, adaptation, and
+                reflection, and all five are production-ready today.
+              </p>
+            </div>
+
+            <div class="overview-layout">
+              <div class="page-template-grid takeaway-grid" id="takeawayGrid"></div>
+            </div>
+
+            <div class="slide-footer slide-footer--light">
+              <span>10</span>
+              <span>From static UI with AI features to AI-native interfaces</span>
+            </div>
+          </section>
+        </div>
+
+        <header class="deck-topbar">
+          <div>
+            <p class="eyebrow">Presentation flow</p>
+            <h2 id="topbarTitle">Hero screen</h2>
+          </div>
+
+          <div class="deck-status">
+            <div class="progress-block">
+              <span>Slide <b id="slideIndex">01</b> / <b id="slideTotal">10</b></span>
+              <div class="progress-track" aria-hidden="true">
+                <span id="progressFill"></span>
+              </div>
+            </div>
+
+            <div class="control-row">
+              <button class="ghost-button" id="prevSlide" type="button">
+                Previous
+              </button>
+              <button class="primary-button" id="nextSlide" type="button">
+                Next
+              </button>
+            </div>
+          </div>
+        </header>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
